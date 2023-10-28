@@ -4,10 +4,10 @@ if [ ! -f /var/lib/mldonkey/downloads.ini ]; then
     mldonkey &
     echo "Waiting for mldonkey to start..."
     sleep 5
-    /usr/lib/mldonkey/mldonkey_command -p "" "set client_name https://hub.docker.com/r/wibol/mldonkey-ubuntu" "save"
+    /usr/lib/mldonkey/mldonkey_command -p "" "set client_name mldonkey-ubuntu" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set client_buffer_size 5000000" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set run_as_user mldonkey" "save"
-    /usr/lib/mldonkey/mldonkey_command -p "" "set allowed_ips 0.0.0.0/0" "save"
+    /usr/lib/mldonkey/mldonkey_command -p "" "set allowed_ips 0.0.0.0-255.255.255.255" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set enable_kademlia true" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set enable_bittorrent false" "save"
     /usr/lib/mldonkey/mldonkey_command -p "" "set enable_overnet false" "save"
